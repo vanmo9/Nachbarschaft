@@ -10,7 +10,7 @@
     id="bootstrap-css"
   />
 
-  <!------ Include the above in your HEAD tag ---------->
+ 
 </head>
 <body>
   <div class="login-reg-panel">
@@ -36,7 +36,7 @@
     <div class="white-panel">
       <div class="login-show">
 				<h2>LOGIN</h2>
-				<form action="/accounts/login" method="POST">
+				<form action="login" method="POST">
 					{% csrf_token %}
 					<input name="username" required id="id_username" type="text" placeholder="Username" />
 					<input name="password" required id="id_password" type="password" placeholder="Password" />
@@ -47,14 +47,14 @@
       </div>
       <div class="register-show">
 				<h2>REGISTER</h2>
-				<form action="/accounts/register" method="POST">
+				<form action="register" method="POST">
 				  {% csrf_token %}
 				<input name="username" required id="id_username" type="text" placeholder="Username" />
         <input name="email" required id="id_email" type="text" placeholder="Email" />
         <input name="password1" required id="id_password1" type="password" placeholder="Password" />
         <input name="password2" required id="id_password2" type="password" placeholder="Confirm Password" />
 				<input class="btn btn-outline-info" type="submit" value="REGISTER">
-				<input type="hidden" name="next" value="{{ next }}" >
+				<input type="hidden" name="next" value="{{ login }}" >
 			  </form> 
       </div>
     </div>
