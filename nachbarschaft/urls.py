@@ -22,11 +22,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^register/',schaft_views.register, name ='register'),
-    url(r'^profile/', schaft_views.profile, name='profile'),
-    url(r'^login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    url(r'^logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
-    url(r'',include('schaft.urls')) 
+    # url(r'^register/',schaft_views.register, name ='register'),
+    # url(r'^profile/', schaft_views.profile, name='profile'),
+    url(r'^add/images/', schaft_views.post, name='post'),
+    url(r'^accounts/',include('registration.backends.simple.urls')),
+    # url(r'^login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    # url(r'^logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
+    url('',include('schaft.urls')) 
 ]
 
  

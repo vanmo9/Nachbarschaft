@@ -52,3 +52,20 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
+
+# @login_required
+def post(request, id):
+   post = Post.objects.get(id=post.id)
+   comments = Comment.objects.filter(post=post)
+   if request.method == 'POST':
+       form = PostForm(request.POST)
+       if form.is_valid():
+           img = form.save(commit=False)
+           img.user = request.user
+           img.post = post
+           img.save()
+           return redirect("home")
+   else:
+       form = PostForm()
+   return render(request, 'post.html', {"post": post, "img": img, "form": form})   

@@ -4,6 +4,11 @@
 <!-- Rotating card -->
 <div class="container">
 <div class="card-wrapper">
+  <div class="vanmo" style="text-align:center">
+    <h2>Welcome <strong>{{user}}</strong></h2>
+     <h1>SING IN TO A NEIGHBOURHOOD</h1> 
+     
+     <a href="{% url 'post' %}" class="btn btn-danger">Danger</a>
     <div class="row">
         {% for post in posts %} 
       <div class="col-md-4" style="margin-top: 150px;">
@@ -60,8 +65,12 @@
       </div>
       
       {%endfor%}
+      
+      
   </div>
   </div>
+</div>
+</div>
 </div>
 
   <!-- Rotating card -->

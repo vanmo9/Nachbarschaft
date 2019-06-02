@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load static%}
 {% block content %}
+{% load bootstrap4%}
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
   <link
@@ -36,25 +37,28 @@
     <div class="white-panel">
       <div class="login-show">
 				<h2>LOGIN</h2>
-				<form action="login" method="POST">
+				<form>
 					{% csrf_token %}
+				
 					<input name="username" required id="id_username" type="text" placeholder="Username" />
 					<input name="password" required id="id_password" type="password" placeholder="Password" />
-					<input class="btn btn-outline-info" type="submit" value="LOGIN">
-					<input type="hidden" name="next" value="{{ home }}" >
+					<input class="btn btn-outline-info" type="submit"  value="LOGIN">
+					<!-- <input type="hidden" name="next" value="/accounts/register/" > -->
+					<!-- <p class="center-aligned">Dont have an account?<a href="/accounts/register/"></a></p> -->
 				</form>
         <a href="">Forgot password?</a>
       </div>
       <div class="register-show">
 				<h2>REGISTER</h2>
-				<form action="register" method="POST">
-				  {% csrf_token %}
-				<input name="username" required id="id_username" type="text" placeholder="Username" />
+				<form action="/accounts/register/" method="POST">
+					{% csrf_token %}
+					{%bootstrap_form form layout='inline'%}
+				<!-- <input name="username" required id="id_username" type="text" placeholder="Username" />
         <input name="email" required id="id_email" type="text" placeholder="Email" />
         <input name="password1" required id="id_password1" type="password" placeholder="Password" />
-        <input name="password2" required id="id_password2" type="password" placeholder="Confirm Password" />
+        <input name="password2" required id="id_password2" type="password" placeholder="Confirm Password" /> -->
 				<input class="btn btn-outline-info" type="submit" value="REGISTER">
-				<input type="hidden" name="next" value="{{ login }}" >
+				<input type="hidden" name="next" value="/accounts/login/" >
 			  </form> 
       </div>
     </div>
