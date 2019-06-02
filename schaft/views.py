@@ -67,7 +67,7 @@ def pumwani(request):
     return render(request, 'pumwani.html', locals()) 
 
 # @login_required
-def post(request, id):
+def post(request, id):  
    post = Post.objects.get(id=post.id)
    comments = Comment.objects.filter(post=post)
    if request.method == 'POST':
