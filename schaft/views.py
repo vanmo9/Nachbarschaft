@@ -7,7 +7,7 @@ from .form import UserRegisterForm ,UserUpdateForm, ProfileUpdateForm
 # Create your views here.
 
 
-def home(request):
+def home(request): 
     posts = Post.objects.all()
     return render(request, 'home.html', locals())
 @login_required
