@@ -17,7 +17,7 @@ def moringa(request):
 
  
  
-def registration_form(request):
+def registration_form(request):  
    if request.method == 'POST':
        form = UserRegisterForm(request.POST)
        if form.is_valid():
