@@ -19,7 +19,7 @@ This is a python web application that allows users to get information about thei
 3.  From terminal you use
     '$ git clone <https://github.com/vanmo9/Nachbarschaft/>'
 
-   
+     
 ## BDD  
  
 | BEHAVIOUR | OUTPUT|
