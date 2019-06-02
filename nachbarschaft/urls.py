@@ -19,7 +19,7 @@ from django.contrib import admin
 from schaft import views as schaft_views
 from django.conf import settings  
 from django.conf.urls.static import static
-
+  
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^registration_form/',schaft_views.registration_form, name ='registration_form'),
