@@ -54,7 +54,7 @@ class NachbarSchaft (models.Model):
     def __str__(self):
         return self.hood_name  
 
-class Business(models.Model):
+class Business(models.Model):  
     business_name = models.CharField(max_length=30, blank=True)
     User.bus_user = models.ForeignKey(User, on_delete = models.CASCADE)
     nachbarschaft_id = models.ForeignKey(User, on_delete = models.CASCADE)
