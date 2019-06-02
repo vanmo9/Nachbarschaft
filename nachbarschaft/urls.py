@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     url(r'^moringa', schaft_views.moringa, name = 'moringa'),
     url(r'^pumwani', schaft_views.pumwani, name = 'pumwani'),
+    url(r'^home', schaft_views.home, name = 'home'),
     url(r'^buruburu', schaft_views.buruburu, name = 'buruburu'),
     url('',include('schaft.urls'))   
 ]
