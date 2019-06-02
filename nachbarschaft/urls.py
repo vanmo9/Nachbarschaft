@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^moringa', schaft_views.moringa, name = 'moringa'),
     url(r'^pumwani', schaft_views.pumwani, name = 'pumwani'),
     url(r'^buruburu', schaft_views.buruburu, name = 'buruburu'),
-    url('',include('schaft.urls')) 
+    url('',include('schaft.urls'))   
 ]
 
  
