@@ -1,6 +1,6 @@
 # Nachbarschaft
 
-This is a python web application that allows users to get information about their neighbourhood. Users have profiles in which they will be posting their daily activities happening in their neighbourhood.
+This is a python web application that allows users to get information about their neighbourhood. Users have profiles in which they will be posting their daily activities happening in their neighbourhood.  
 
 
 ![Screenshot](nachbarschaft.png)
