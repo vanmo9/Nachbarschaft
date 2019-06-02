@@ -13,7 +13,7 @@ This is a python web application that allows users to get information about thei
 
     This is web application that allows users to get information about their neighbourhood. Users have profiles in which they will be posting their daily activities happening in their neighbourhood. Users can also jion and leave neighbourhoods and can aslo delete and post activity happening in their sourrounding.
 ## Project setup  installation
-
+  
 1.  From the repository, click + in the global sidebar and select Clone this repository under Get to work.
 2.  Copy the clone command.
 3.  From terminal you use
@@ -43,7 +43,7 @@ This is a python web application that allows users to get information about thei
 
 ## Contact Information  
 
-* Email (vanmowha@gmail.com) 
+* Email (vanmowha@gmail.com)    
 
 
 ## License ([MIT License](https://github.com/vanmo9/Nachbarschaft/blob/master/LICENSE))
