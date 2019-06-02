@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="card-wrapper">
+      <div class="vanmo" style="text-align:center">
+        
+        <h2>Welcome <strong>{{user}}</strong></h2>
+         <h1>SING IN TO A NEIGHBOURHOOD</h1> 
+         
+         <a href="{% url 'post' %}" class="btn btn-danger">Danger</a>
+        <div class="row">
+            {% for post in posts %} 
+          <div class="col-md-4" style="margin-top: 150px;">
+              <div id="card-1" class="card card-rotating text-center">
+      
+                  <!-- Front Side -->
+                  <div class="face front">
+              
+                    <!-- Image-->
+                    <div class="card-up">
+                        <img src='{{post.img.url}}' alt="" class="card-img-top" width="100%" height="225">
+                    </div>
+              
+                    <!-- Avatar -->
+                    <div class="avatar mx-auto white"><img src="https://www.tsom.ca/df_media/W1siZiIsIjIwMTcvMDgvMTEvMDcvMzEvNDAvZWIwZDJkZmQtMmU2Yy00MDBkLWIzMWItMzE5NjJkZjA5ZTE3L25laWdoYm91cmhvb2QuanBnIl0sWyJwIiwidGh1bWIiLCIxNTAweDc4NFx1MDAzZSJdXQ/neighbourhood.jpg?sha=fe94f1985ed8a049" class="rounded-circle"
+                        alt="Sample avatar image." height="200px;" width="200px;">
+                    </div>
+              
+                    <!-- Content -->
+                    <div class="card-body">
+                      <h4 class="font-weight-bold mb-3">{{ post.title }}</h4>
+                      <p class="font-weight-bold blue-text">{{ post.author }}</p>
+                      <!-- Triggering button -->
+                      <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                  </div>
+                  <!-- Front Side -->
+              
+                  <!-- Back Side -->
+                  <div class="face back">
+                    <div class="card-body">
+              
+                      <!-- Content -->
+                      <h4 class="font-weight-bold mb-0">About </h4>
+                      <hr>
+                      <p>
+                          {{ post.content }}
+                        <hr>
+                        <!-- Social Icons -->
+                        <ul class="list-inline py-2">
+                          <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+                          <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
+                          <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
+                          <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                        <!-- Triggering button -->
+                        <!-- <a class="rotate-btn" data-card="card-1"><i class="fas fa-undo"></i> Click here to rotate back</a> -->
+              
+                    </div>
+                  </div>
+                  <!-- Back Side -->
+              
+                </div>
+          </div>
+          
+          {%endfor%}
+          
+          
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
