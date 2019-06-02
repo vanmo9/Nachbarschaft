@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'^accounts/',include('registration.backends.simple.urls')),
     url(r'^login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     url(r'^logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
+    url(r'^moringa', schaft_views.moringa, name = 'moringa'),
+    url(r'^pumwani', schaft_views.pumwani, name = 'pumwani'),
+    url(r'^buruburu', schaft_views.buruburu, name = 'buruburu'),
     url('',include('schaft.urls')) 
 ]
 

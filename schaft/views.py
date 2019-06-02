@@ -10,7 +10,12 @@ from .form import UserRegisterForm ,UserUpdateForm, ProfileUpdateForm
 def home(request):
     posts = Post.objects.all()
     return render(request, 'home.html', locals())
+@login_required
+def moringa(request):
+    posts = Post.objects.all()
+    return render(request, 'moringa.html', locals())  
 
+ 
  
 def registration_form(request):
    if request.method == 'POST':
@@ -28,6 +33,10 @@ def registration_form(request):
 def login(request):
     return render(request, 'registration_form/login.html')   
 
+@login_required
+def buruburu(request):
+    posts = Post.objects.all()
+    return render(request, 'buruburu.html', locals()) 
 
 @login_required
 def profile(request):
@@ -52,7 +61,10 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
-
+@login_required
+def pumwani(request):
+    posts = Post.objects.all()
+    return render(request, 'pumwani.html', locals()) 
 
 # @login_required
 def post(request, id):
