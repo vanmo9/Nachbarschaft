@@ -30,7 +30,7 @@ def registration_form(request):
    return render(request, 'registration/registration_form.html', {'form': form})
 
 
-def login(request):
+def login(request):   
     return render(request, 'registration_form/login.html')   
 
 @login_required
