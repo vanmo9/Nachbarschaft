@@ -12,7 +12,7 @@ def home(request):
     return render(request, 'home.html', locals())
 
  
-def register(request):
+def registration_form(request):
    if request.method == 'POST':
        form = UserRegisterForm(request.POST)
        if form.is_valid():
@@ -22,11 +22,11 @@ def register(request):
            return redirect('login')
    else:
        form = UserRegisterForm()
-   return render(request, 'registration/register.html', {'form': form})
+   return render(request, 'registration/registration_form.html', {'form': form})
 
 
 def login(request):
-    return render(request, 'registration/login.html')   
+    return render(request, 'registration_form/login.html')   
 
 
 @login_required
