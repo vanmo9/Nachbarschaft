@@ -25,7 +25,7 @@ SECRET_KEY = 'b5pm&h-*&xkn%5)ylwte+g(1f74u_4yjiq()6%ry7s&fj&jv36'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [nachbarschaft.herokuapp.com]
+ALLOWED_HOSTS = ['nachbarschaft.herokuapp.com']
 
 
 # Application definition
