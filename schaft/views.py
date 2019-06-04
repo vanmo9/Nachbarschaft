@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .form import UserRegisterForm ,UserUpdateForm, ProfileUpdateForm
+from .form import UserRegisterForm ,UserUpdateForm, ProfileUpdateForm, PostForm
 
 # Create your views here.
 
@@ -66,18 +66,21 @@ def pumwani(request):
     posts = Post.objects.all()
     return render(request, 'pumwani.html', locals()) 
 
-# @login_required
-def post(request, id):  
-   post = Post.objects.get(id=post.id)
-   comments = Comment.objects.filter(post=post)
-   if request.method == 'POST':
-       form = PostForm(request.POST)
-       if form.is_valid():
-           img = form.save(commit=False)
-           img.user = request.user
-           img.post = post
-           img.save()
-           return redirect("home")
-   else:
-       form = PostForm()
-   return render(request, 'post.html', {"post": post, "img": img, "form": form})   
+@login_required
+def post(request):
+    current_user=request.user
+    if request.method=='POST':
+        form=PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post=form.save(commit=False)
+            post.user=current_user
+            form.save()
+            
+        return redirect('post')
+    else:
+        form=PostForm(instance=request.user)
+        # p_form=ProfileUpdateForm(instance=request.user.profile)
+    context={
+        'form' : form,
+    }
+    return render(request, 'post.html', context) 
